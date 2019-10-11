@@ -136,7 +136,7 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(207, 22);
             this.txtPwd.TabIndex = 7;
-            this.txtPwd.Text = "123456";
+            this.txtPwd.Text = "";
             // 
             // btnGenerarCodigo
             // 
