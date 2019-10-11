@@ -21,13 +21,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C55CE46E-C2D4-49D8-822F-BE3761CF24B2}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName0 = GeneradorC\\GeneradorC.csproj
-		SccProjectName0 = GeneradorC
-		SccLocalPath0 = GeneradorC
-		SccLocalPath1 = .
-	EndGlobalSection
+	EndGlobalSection	
 EndGlobal
