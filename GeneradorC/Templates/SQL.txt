@@ -1,0 +1,181 @@
+﻿##En el segundo renglon va el nombre del archivo, en el tercero va el nombre de la extensión
+##GAF(NombreTabla)SP
+##sql
+USE [assMasterDB]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_Main_GAF(NombreTabla)_Seleccionar]    Script Date: GAF(Date)  ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- ==================
+-- Autor:               <GAF(valor1)>
+-- Fecha de creación:   <GAF(Date)>
+-- Descripción:         <Selecciona los registros de la tabla de GAF(NombreTabla)>
+-- ===================
+
+/*
+Modificaciones:
+No.    Fecha          Autor                             Descripción
+---    -----          -----                             -----------
+> 1    GAF(Date)      GAF(valor1) Creación
+*/
+CREATE PROCEDURE [dbo].[usp_Main_GAF(NombreTabla)_Seleccionar]
+    @Accion INT = 0 ,
+     @GAF(ID) GAF(IdDataTypeName)= NULL
+AS 
+    SET NOCOUNT OFF ;
+    IF @Accion = 1 --Seleccionamos todos los registros de la tabla 
+        BEGIN
+            SELECT  
+			GAFForEach
+			GAF(ColumnName) GAF(,) 			
+		    GAFEndForEach
+            FROM     [GAF(NombreEsquema)].[GAF(NombreTabla)]            
+        END
+
+    IF @Accion = 2 -- Seleccionamos todos los registros por su el ID 
+        BEGIN
+            SELECT  
+		GAFForEach
+			GAF(ColumnName) GAF(,) 			
+		GAFEndForEach
+            FROM    GAF(NombreTabla)
+            WHERE   GAF(ID)= @GAF(ID)
+        END
+GO
+
+-- ====================
+-- Autor:               <GAF(valor1)>
+-- Fecha de creación:   <GAF(Date)>
+-- Descripción:         <Inserta un registro en la tabla de GAF(NombreTabla)>
+-- ====================
+
+/*
+Modificaciones:
+No.    Fecha          Autor                             Descripción
+---    -----          -----                             -----------
+> 1    GAF(Date)   GAF(valor1) Creación
+*/
+CREATE PROCEDURE [dbo].[usp_Main_GAF(NombreTabla)_Insertar]
+(
+	 GAFForEach
+			@GAF(ColumnName) GAF(DataTypeName) = NULL GAF(,) 			
+	 GAFEndForEach
+)
+AS
+SET NOCOUNT OFF;
+
+BEGIN TRY
+BEGIN TRANSACTION
+
+INSERT INTO [GAF(NombreEsquema)].[GAF(NombreTabla)]
+     (
+     GAFForSinIdEach
+			GAF(ColumnName) GAF(,) 			
+	 GAFEndForSinIdEach
+     )
+VALUES
+     (
+     GAFForSinIdEach
+			@GAF(ColumnName) GAF(,) 			
+	 GAFEndForSinIdEach
+     )
+
+SET @GAF(ID) = SCOPE_IDENTITY() 
+
+COMMIT TRANSACTION
+
+END TRY
+BEGIN CATCH
+ROLLBACK
+DECLARE @ErrorMessage NVARCHAR(4000) ;
+DECLARE @ErrorSeverity INT ;
+DECLARE @ErrorState INT ;
+
+SELECT  @ErrorMessage = ERROR_MESSAGE() ,
+@ErrorSeverity = ERROR_SEVERITY() ,
+@ErrorState = ERROR_STATE() ;
+
+RAISERROR (@ErrorMessage, -- Message text.
+      @ErrorSeverity, -- Severity.
+      @ErrorState -- State.
+      ) ;
+END CATCH
+
+GO	
+
+-- ====================
+-- Autor:               <GAF(valor1)>
+-- Fecha de creación:   <GAF(Date)>
+-- Descripción:         <Modifica un registro en la tabla de GAF(NombreTabla)>
+-- ====================
+
+/*
+Modificaciones:
+No.    Fecha          Autor                             Descripción
+---    -----          -----                             -----------
+> 1    GAF(Date)   GAF(valor1) Creación
+*/
+CREATE PROCEDURE [dbo].[usp_Main_GAF(NombreTabla)_Modificar]
+(
+	 GAFForEach
+			@GAF(ColumnName) GAF(DataTypeName) GAF(,) 			
+	GAFEndForEach  
+)
+AS
+SET NOCOUNT OFF;
+
+BEGIN TRY
+BEGIN TRANSACTION
+
+UPDATE [GAF(NombreEsquema)].[GAF(NombreTabla)] SET 
+    GAFForSinIdEach
+              GAF(ColumnName) = @GAF(ColumnName) GAF(,) 			
+	GAFEndForSinIdEach
+WHERE (GAF(ID) = @GAF(ID))
+
+COMMIT TRANSACTION
+
+END TRY
+BEGIN CATCH
+ROLLBACK
+DECLARE @ErrorMessage NVARCHAR(4000) ;
+DECLARE @ErrorSeverity INT ;
+DECLARE @ErrorState INT ;
+
+SELECT  @ErrorMessage = ERROR_MESSAGE() ,
+@ErrorSeverity = ERROR_SEVERITY() ,
+@ErrorState = ERROR_STATE() ;
+
+RAISERROR (@ErrorMessage, -- Message text.
+      @ErrorSeverity, -- Severity.
+      @ErrorState -- State.
+      ) ;
+END CATCH
+
+GO
+-- ====================
+-- Autor:               <GAF(valor1)>
+-- Fecha de creación:   <GAF(Date)>
+-- Descripción:         <Modifica un registro en la tabla de GAF(NombreTabla)>
+-- ===================
+
+/*
+Modificaciones:
+No.    Fecha          Autor                             Descripción
+---    -----          -----                             -----------
+> 1    GAF(Date)   GAF(valor1)
+*/
+CREATE PROCEDURE [dbo].[usp_Main_GAF(NombreTabla)_Eliminar]
+(
+      @GAF(ID)  GAF(IdDataTypeName)
+)
+AS
+SET NOCOUNT OFF;
+
+DELETE FROM [GAF(NombreEsquema)].[GAF(NombreTabla)]
+WHERE (GAF(ID) = @GAF(ID))
+
+	
+	 

@@ -1,0 +1,19 @@
+﻿##EN el segundo renglon va el nombre del archivo, en el tercero va el nombre de la extensión
+##clsGAF(NombreTabla)
+##cs
+using System;
+using System.Collections.Generic;
+namespace Model
+{
+    public class clsGAF(NombreTabla)
+    {
+
+##Un comentario
+		GAFForEach
+			public GAF(DataType)  GAF(ColumnName) { get; set; }			
+		GAFEndForEach
+
+    }
+
+    
+}

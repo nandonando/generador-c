@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ayuda</title>
+</head>
+<body>
+        <h3>A continuación se muestra un grupo de palabras reservadas que le ayudaran a reemplazarlas por información
+        y a generar codigo con GeneradorC</h3>        
+        <strong>GAF(NombreTabla)</strong> > Esta palabra se reemplaza por el nombre de la tabla
+        <br /><br />
+        <strong>GAFForEach</strong> > Sirve para repetir una intruccion el numero de veces equivalente a la cantidad de columnas
+        <br /><br />
+        <strong>GAFEndForEach</strong> > Sirve para terminar la instrucción GAFForEach
+        <br /><br />
+        <strong>GAFIfInt32</strong> > Sirve para remplazar texto solo si el campo es entero
+        <br /><br />
+        <strong>GAFIfString</strong>
+        >Sirve para remplazar texto solo si el campo es cadena
+        <br /><br />
+        <strong>GAFIfDateTime</strong> > Sirve para remplazar texto solo si el campo es fecha
+        <br /><br />
+        <strong>GAFIfBoolean</strong> > Sirve para remplazar texto solo si el campo es boleano
+        <br /><br />
+        <strong>##</strong> > Sirve para poner comentarios dentro del archivo
+        <br /><br />
+        <strong>GAF(ID)</strong>
+        >Sirve para obtener el id de la tabla
+        <br /><br />
+        <strong>GAF(,)</strong> > Sirve para poner una coma al final de una linea excepto en el ultimo campo de la tabla
+        <br /><br />
+        <strong>GAF(*)</strong>
+        <br /><br />
+        >El asterisco lo podemos reemplazar por cualquier tipo de campo que tiene una tabla<br />
+        >por ejemplo GAF(ColumnName) que da el nombre de columna,GAF(DataType) que da el tipo de dato<br />
+        >para camelCase agregamos el las letras cC, ejemplo GAFcC(ColumnName)
+        <br /><br />
+        Nombre y extensión del archivo
+        <br /><br />
+        ##En el segundo renglon va el nombre del archivo, en el tercero va el nombre de la extensión
+        <br /><br />
+        ##GAF(NombreTabla)BE
+        <br /><br />
+        ##cs
+        <br /><br />
+        <strong>GAF(IdDataTypeName)</strong>
+        <br /><br />
+        Funciona para reemplazar el id con su tipo de dato por ejemplo
+        @Ciud_ID int
+        GAF(ID) GAF(IdDataTypeName)
+        <br /><br />
+        <strong>GAFForSinIdEach</strong>
+        <br /><br />
+        Sirve para repetir una instrucción el número de veces equivalente a la cantidad
+        de columnas excepto el id de la tabla.
+        <br /><br />
+        <strong>GAFEndForSinIdEach</strong>
+        <br /><br />
+        Sirve para terminar la instrucción GAFForSinIdEach
+        <br /><br />
+        <strong>GAF(Date)</strong>
+        Sirve para traer la fecha actual
+        <br />    
+</body>
+
+</html>

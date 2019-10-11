@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneradorC", "GeneradorC\GeneradorC.csproj", "{516D6FAF-71C3-47EA-9A06-FEA2E411328A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{516D6FAF-71C3-47EA-9A06-FEA2E411328A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516D6FAF-71C3-47EA-9A06-FEA2E411328A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516D6FAF-71C3-47EA-9A06-FEA2E411328A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516D6FAF-71C3-47EA-9A06-FEA2E411328A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C55CE46E-C2D4-49D8-822F-BE3761CF24B2}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://developersip.visualstudio.com/
+		SccProjectUniqueName0 = GeneradorC\\GeneradorC.csproj
+		SccProjectName0 = GeneradorC
+		SccLocalPath0 = GeneradorC
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
