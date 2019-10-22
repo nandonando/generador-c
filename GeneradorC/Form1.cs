@@ -134,7 +134,7 @@ namespace GeneradorC
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "exec master.dbo.sp_databases";
+                        cmd.CommandText = "SELECT name, database_id, create_date FROM sys.databases";
                         cmd.Connection = conexion;
 
                         SqlDataAdapter Adaptador = new SqlDataAdapter(cmd);
@@ -143,7 +143,7 @@ namespace GeneradorC
                             Adaptador.Fill(dttBD);
                             foreach (DataRow fila in dttBD.Rows)
                             {
-                                cmbBasesDeDatos.Items.Add(fila["DataBase_Name"]);
+                                cmbBasesDeDatos.Items.Add(fila["name"]);
 
                             }
 
